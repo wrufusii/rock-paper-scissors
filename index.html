@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');</style>
 </head>
 <body>
-    
+    <div id="main">
+        <div id="header">
+            <h1 id="title">rock-paper-scissors</h1>   
+        </div>
+        <div id="game">
+            <div id="options">
+                <div class="option hvr-grow-rotate hvr-glow" id="rock">
+                    <p>&#129304;</p>
+                </div>
+                <div class="option hvr-grow-rotate hvr-glow" id="paper">
+                    <p>&#128400;</p>
+                </div>
+                <div class="option hvr-grow-rotate hvr-glow" id="scissors">
+                    <p>&#9996;</p>
+                </div>
+            </div>
+            <div id="scoring">
+                <div class="score-data" id="player-data">
+                    <p class="score" id="player-score">0</p>
+                    <h3 class="name" id="player-name">Player</h3>
+                </div>
+                <div class="score-data" id="computer-data">
+                    <p class="score" id="computer-score">0</p>
+                    <h3 class="name" id="computer-name">Computer</h3>
+                </div>
+            </div>
+        </div>
+    </div>  
 </body>
     <script>
         const computerPlay = () => {
