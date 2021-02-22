@@ -71,19 +71,16 @@
             let playerTotal = 0;
             let compTotal = 0;
 
-            for (let i=0; i<5; i++) {
-                const playerSelection = prompt('choice?');
-                const computerSelection = computerPlay();
-                
-                const result = playRound(playerSelection, computerSelection);
-                console.log(result);
+            const playerSelection = prompt('choice?');
+            const computerSelection = computerPlay();
+            
+            const result = playRound(playerSelection, computerSelection);
+            console.log(result);
 
-                if (result === 'Player wins') {
-                    playerTotal++;
-                } else if (result === 'Computer wins') {
-                    compTotal++;
-                }
-
+            if (result === 'Player wins') {
+                playerTotal++;
+            } else if (result === 'Computer wins') {
+                compTotal++;
             }
 
             if (playerTotal > compTotal) {
