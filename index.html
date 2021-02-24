@@ -14,14 +14,14 @@
         </div>
         <div id="game">
             <div id="options">
-                <div class="option hvr-grow-rotate hvr-glow" id="rock">
-                    <p>&#129304;</p>
+                <div class="hvr-grow-rotate hvr-glow">
+                    <p class="option" id="rock">&#129304;</p>
                 </div>
-                <div class="option hvr-grow-rotate hvr-glow" id="paper">
-                    <p>&#128400;</p>
+                <div class="hvr-grow-rotate hvr-glow">
+                    <p class="option" id="paper">&#128400;</p>
                 </div>
-                <div class="option hvr-grow-rotate hvr-glow" id="scissors">
-                    <p>&#9996;</p>
+                <div class="hvr-grow-rotate hvr-glow">
+                    <p class="option" id="scissors">&#9996;</p>
                 </div>
             </div>
             <div id="scoring">
@@ -38,6 +38,9 @@
     </div>  
 </body>
     <script>
+        
+        
+        //computer turn
         const computerPlay = () => {
             const choices = ['rock', 'paper', 'scissors'];
             let randomInt = Math.floor(Math.random() * 3);
@@ -66,12 +69,12 @@
             }
         }
 
-        const game = () => {
+        let playerTotal = 0;
+        let compTotal = 0;
 
-            let playerTotal = 0;
-            let compTotal = 0;
+        const game = (e) => {
 
-            const playerSelection = prompt('choice?');
+            const playerSelection = e.target.id;
             const computerSelection = computerPlay();
             
             const result = playRound(playerSelection, computerSelection);
@@ -79,18 +82,20 @@
 
             if (result === 'Player wins') {
                 playerTotal++;
+                playerScore.innerText = playerTotal;
             } else if (result === 'Computer wins') {
                 compTotal++;
+                computerScore.innerText = compTotal;
             }
+        }
+        
+        //selectors
+        const options = [...document.querySelectorAll(".option")]
+        options.forEach(option => option.addEventListener('click', game));
 
-            if (playerTotal > compTotal) {
-                    return 'Player beats computer'
-                } else {
-                    return 'Computer beats player'
-                }
+        const playerScore = document.querySelector("#player-score");
+        const computerScore = document.querySelector("#computer-score");
 
-        }        
-        console.log(game());
 
     </script>
 </html>
