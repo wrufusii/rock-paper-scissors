@@ -45,6 +45,8 @@ body {
 .option {
   font-size: 120px;
   padding: 20px;
+  margin: 0px;
+  user-select: none;
 }
 
 .option:hover {
@@ -52,6 +54,7 @@ body {
 
 .option p {
   margin: 0px;
+  user-select: none;
 }
 
 #scoring {
